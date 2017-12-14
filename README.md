@@ -1,7 +1,4 @@
-# roombaProj4
-
-
-# Working with ROS
+# Roomba Project 4
 ## Enter the following into terminal
 
 This will update your pi
