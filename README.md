@@ -1,6 +1,6 @@
 # roombaProj4
 
-##ControllingRoombaUsingPi
+## CntrollingRoombaUsingPi
 This is to control the Roomba using the Serial port connected through the Raspberry Pi 3
 
 For the Raspberry Pi 3 you have to download Ubuntu Mate image through Google. Download a file SD card formatter.
@@ -31,8 +31,8 @@ After you hvae pycreate 2 installed you can now interact with the Roomba using t
 
 This package will use subscriber and publisher nodes to pull the IR readings from the Roomba and display it on screen .
 
-#Working with ROS
-##Enter the following into terminal
+# Working with ROS
+## Enter the following into terminal
 
 This will update your pi
 
@@ -42,7 +42,7 @@ sudo apt-get upgrade
 
 sudo apt-get install git
 
-#Now create a workspace
+# Now create a workspace
 
 This will create a workspace where we will be working in
 
@@ -56,9 +56,9 @@ catkin_make
 
 source devel/setup.bash
 
-#Create a publisher package
+# Create a publisher package
 
-##This create a publisher package that will publish the sensors data out
+## This create a publisher package that will publish the sensors data out
 
 cd~/robot/src
 
@@ -66,7 +66,7 @@ catkin_create_pkg publisher rospy
 
 Clone publisher.py from github
 
-#This takes the files from github and copies it into your Pi
+# This takes the files from github and copies it into your Pi
 
 cd ~/robot/src/publisher/src
 
@@ -74,17 +74,17 @@ curl -o publisher.py https://github.com/minh215/ControllingRoombaUsingPi/blob/ma
 
 sudo chmod u+x publisher.py
 
-#Create Subscriber package
+# Create Subscriber package
 
-##This creates the subscirber package. The subscriber packages gets the output from the publisher package
+## This creates the subscirber package. The subscriber packages gets the output from the publisher package
 
 cd ~/robot/src
 
 catkin_create_pkg subscriber rospy
 
-#Clone subscriber from github
+# Clone subscriber from github
 
-##This will copy the subscriber file from github into your pi
+## This will copy the subscriber file from github into your pi
 
 cd ~/robot/src/subscriber/src
 
@@ -92,8 +92,8 @@ curl -o subscriber.py https://github.com/minh215/ControllingRoombaUsingPi/blob/m
 
 sudo chmod u+x subscriber.py
 
-#Now connect the Pi to Roomba using Serial cable
-##Run Ros/ open the first terminal
+# Now connect the Pi to Roomba using Serial cable
+## Run Ros/ open the first terminal
 
 cd ~/robot
 
@@ -103,7 +103,7 @@ source devel/setup.bash
 
 roscore
 
-#Run publisher/ open a second terminal
+# Run publisher/ open a second terminal
 
 cd ~/robot
 
@@ -111,7 +111,7 @@ source devel/setup.bash
 
 rosrun publisher publisher.py
 
-#Run subscriber/ Open a third terminal
+# Run subscriber/ Open a third terminal
 
 cd ~/robot
 
@@ -119,8 +119,10 @@ source devel/setup.bash
 
 rosrun subscriber subscriber.py
 
-#Run navigation
+# Run navigation
 cd ~/robot
+
 source devel/setup.bash
+
 rosrun navigation navigation.py
 
